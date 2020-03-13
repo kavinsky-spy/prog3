@@ -1,0 +1,30 @@
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr:nth-child(odd) {
+    background-color: aqua;
+}
+
+tr:nth-child(even) {
+    background-color: yellow;
+}
+
+tr:nth-child(9) {
+    background-color: salmon;
+}
+
+tr:nth-child(5n) {
+    background-color: chartreuse;
+}
+
+tr:nth-child(3n + 4) {
+    background-color: steelblue;
+}
+
+tr:hover{
+    background-color: black;
+}
+

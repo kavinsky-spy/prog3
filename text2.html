@@ -35,24 +35,54 @@
             color: black;
         }
 
+        body {
+            padding: 0px;
+            margin: 0px
+        }
+
         .header {
-
+            width: 100%;
             background-color: chartreuse;
-            padding: 30px;
-
+            height: 60px;
+            text-align: center;
+            margin-top: 0px;
         }
 
         .container {
-            width: 70%;
-            height: 120px;
-            float: left;
+            width: 80%;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: blue;
+            text-align: center;
+        }
 
-            background-color: darkgrey;
+        .menu {
+            top: 10px;
+            bottom: 20px;
+            height: 200px;
+            width: 100px;
+            position: relative;
+            background-color: grey;
+
+        }
+
+        .footer {
+            height: 60px;
+            background-color: darkslateblue;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
+
+    <div class="header">header</div>
+    <div class="container">
+        <div class="menu">aaa</div>
+    </div>
+
+    <div class="footer"> </div>
 
     <center>
         <table border="1">
@@ -267,15 +297,6 @@
         </table>
     </center>
 
-
-
-    <div class="header">
-        <div class="container">
-            <div class="menu"></div>
-        </div>
-
-        <div class="footer"></div>
-    </div>
 
 
 </body>
