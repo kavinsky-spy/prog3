@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+	<title>Exemplo1</title>
+	<script>
+		function chamei(){
+			listaDives = document.getElementsByTagName("div");
+			for(i=0; i<listaDives.length; i++){
+				listaDives[i].onclick = function(e){
+					e.target.style.backgroundColor = "blue";
+				};
+			};
+		};
+	</script>
+	<style>
+	#teste, #teste2{
+		width: 200px;
+		height: 200px;
+		background-color: grey;
+	}
+	</style>
+</head>
+<body onload='chamei()'>
+	<div id='teste1'></div>
+	<br />
+	<div id='teste2'></div>
+</body>
+</html>

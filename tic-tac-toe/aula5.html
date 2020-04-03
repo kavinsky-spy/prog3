@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo1</title>
+    <script>
+
+        function chamei() {
+            // div = document.getElementById("teste");
+            // div.style.backgroundColor = "blue";
+            // div.onclick = function(e) {
+            //     if (div.style.backgroundColor == "blue") {
+            //     e.target.style.backgroundColor = "red";
+            //     } else {
+            //         e.target.style.backgroundColor = "blue";
+            //     }
+            // }
+
+            //divs = document.getElementsByClassName("teste");
+            // for (i = 0; i < divs.length; i++) {
+            //     divs[i].onclick = function (e) {
+            //         for (j = 0; j < divs.length; j++) {
+            //             if (divs[j].className !== "red") {
+            //                 e.target.style.backgroundColor = "blue";
+            //                 e.target.classList.add("blue");
+            //             }                       
+            //         }
+            //         if ( divs[Math.round(Math.random() * 9)].className !== "blue"){
+            //             divs[Math.round(Math.random() * 9)].classList.add("red");
+            //         }
+
+
+
+            //     }
+
+            // }
+        
+        }
+            var avantis = "url(./avantis.jpg)";
+            var minion = "url(./minion.jpg)";
+            var next;
+
+            var turn = avantis;
+            var divs = document.getElementsByTagName("div");
+
+            function endTest() {
+                var divs = document.getElementsByTagName("div");
+                plays = [];
+                for (i = 0; i < divs.length; i++) {
+                    if (divs[i].children.length == 0) {
+                        plays.push(divs[i].style.backgroundImage);
+                    }
+                    
+                }
+                plays.pop();
+                console.log(plays);
+            }
+
+            function start() {
+                next = document.getElementById("next");
+                for (i = 0; i < divs.length; i++) {
+                    if (divs[i].children.length == 0) {
+                        divs[i].onclick = function (e) {
+                            e.target.style.backgroundImage = turn;
+                            turn = (turn == avantis) ? minion : avantis;
+                            next.style.backgroundImage = turn;
+                            e.target.onclick = undefined;
+                            endTest();
+                        }
+                    }
+                }
+            }
+
+        
+
+
+    </script>
+    <style>
+        .wrapper {
+            width: 333px;
+            margin: 0 auto;
+        }
+
+        .teste {
+            width: 100px;
+            height: 100px;
+            background-color: grey; 
+            margin: 5px;
+            background-size: cover;
+
+        }
+        
+
+        .red {
+            background-color: red;
+        }
+
+
+        .field {
+
+            display: grid;
+            width: 300px;
+            height: 300px;
+            grid-template-columns: auto auto auto;
+
+        }
+
+        #next {
+            float: right;
+            background-size: cover;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+
+</head>
+
+
+<body onload='start()'>
+    <div class="wrapper">
+        <div class="field">
+            <div class="teste"></div>
+            <div class="teste"></div>
+            <div class="teste"></div>
+            <div class="teste"></div>
+            <div class="teste"></div>
+            <div class="teste"></div>
+            <div class="teste"></div>
+            <div class="teste"></div>
+            <div class="teste"></div>
+        </div>
+        
+    </div>
+    <div id="next"></div>
+
+</body>
+
+</html>
