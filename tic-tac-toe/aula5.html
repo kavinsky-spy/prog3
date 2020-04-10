@@ -36,44 +36,69 @@
             //     }
 
             // }
-        
+
         }
-            var avantis = "url(./avantis.jpg)";
-            var minion = "url(./minion.jpg)";
-            var next;
+        var avantis = 'url("./avantis.jpg")';
+        var minion = 'url("./minion.jpg")';
+        var next;
 
-            var turn = avantis;
-            var divs = document.getElementsByTagName("div");
+        var turn = avantis;
+        var divs = document.getElementsByTagName("div");
 
-            function endTest() {
-                var divs = document.getElementsByTagName("div");
-                plays = [];
-                for (i = 0; i < divs.length; i++) {
-                    if (divs[i].children.length == 0) {
-                        plays.push(divs[i].style.backgroundImage);
-                    }
-                    
+        function endTest() {
+            plays = [];
+            var winner;
+            for (i = 0; i < divs.length; i++) {
+                if (divs[i].children.length == 0) {
+                    plays.push(divs[i].style.backgroundImage);
                 }
-                plays.pop();
-                console.log(plays);
             }
-
-            function start() {
-                next = document.getElementById("next");
-                for (i = 0; i < divs.length; i++) {
-                    if (divs[i].children.length == 0) {
-                        divs[i].onclick = function (e) {
-                            e.target.style.backgroundImage = turn;
-                            turn = (turn == avantis) ? minion : avantis;
-                            next.style.backgroundImage = turn;
-                            e.target.onclick = undefined;
-                            endTest();
-                        }
-                    }
+            if (turn == 'url("./minion.jpg")') {
+                winner = "Uniavan";
+            } else {
+                winner = "Minion";
+            }
+            for (i = 0, j = 0; i < plays.length; i += 3, j++) {
+                if (plays[i] == plays[i + 1] && plays[i] == plays[i + 2] && plays[i] != "") {
+                    window.alert(winner + " Won!");
                 }
             }
 
-        
+            for (j = 0; j < 3; j++) {
+                if ((plays[j] == plays[j + 3] && plays[j] == plays[j + 6]) && plays[j] != "") {
+                    window.alert(winner + " Won!");
+                }
+            }
+
+            if ((plays[0] == plays[4] && plays[0] == plays[8]) && plays[0] != "") {
+                window.alert(winner + " Won!");
+            }
+            if ((plays[2] == plays[4] && plays[2] == plays[6]) && plays[2] != "") {
+                window.alert(winner + " Won!");
+            }
+
+            plays.pop();
+            console.log(plays);
+        };
+
+
+
+        function start() {
+            next = document.getElementById("next");
+            for (i = 0; i < divs.length; i++) {
+                if (divs[i].children.length == 0) {
+                    divs[i].onclick = function (e) {
+                        e.target.style.backgroundImage = turn;
+                        turn = (turn == avantis) ? minion : avantis;
+                        next.style.backgroundImage = turn;
+                        e.target.onclick = undefined;
+                        endTest();
+                    }
+                }
+            }
+        }
+
+
 
 
     </script>
@@ -86,12 +111,12 @@
         .teste {
             width: 100px;
             height: 100px;
-            background-color: grey; 
+            background-color: grey;
             margin: 5px;
             background-size: cover;
 
         }
-        
+
 
         .red {
             background-color: red;
@@ -132,7 +157,7 @@
             <div class="teste"></div>
             <div class="teste"></div>
         </div>
-        
+
     </div>
     <div id="next"></div>
 
