@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+	<script>
+		var cor = "";
+		var divCores = [];
+
+		window.onload = function () {
+			cores = [
+				"#000000",
+				"#0000ff",
+				"#00ff00",
+				"#ff0000",
+				"#00ffff",
+				"#ffff00",
+				"#ff00ff",
+				"#f0f0f0",
+				"#ffffff"
+			];
+
+			barra = document.getElementById("barraCores");
+			desenho = document.getElementById("desenho");
+
+			//insira seu código aqui!
+			var cor;			
+			for(i=0;i<cores.length;i++){
+				divCor = document.createElement("div");
+				divCor.style.backgroundColor=cores[i];
+				divCor.style.height="95px";
+				divCor.style.width="95px";
+				divCor.style.float="left";
+				divCor.className+=" divCor";				
+				document.getElementById("barraCores").appendChild(divCor);
+			}
+			for(i=0;i<1013;i++){
+				divCanvas = document.createElement("div");
+				//divCanvas.style.border="solid 1px grey";
+				divCanvas.style.height="20px";
+				divCanvas.style.width="20px";
+				divCanvas.style.float="left";
+				divCanvas.className+=" divCanvas";	
+				   				
+				document.getElementById("desenho").appendChild(divCanvas);
+			}
+			lista=document.getElementsByClassName("divCor");
+			canvas=document.getElementsByClassName("divCanvas");
+			
+			for(i=0; i<lista.length; i++){
+				lista[i].onclick=function(e){
+					for(i=0; i<lista.length; i++){
+						lista[i].style.border="solid black";
+					}
+					e.target.style.border="solid yellow";
+					cor=e.target.style.backgroundColor;
+				}
+			}
+			for(i=0; i<canvas.length; i++){
+				canvas[i].onclick=function(e){
+					e.target.style.backgroundColor=cor;
+				}
+			}
+		};   
+
+
+
+	</script>
+	<style>
+		body {
+			padding-top: 30px;
+		}
+
+		#barraCores,
+		#desenho {
+			width: 930px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#barraCores>div {
+			float: left;
+			margin: 1px;
+			border: 2px solid black;
+		}
+
+		#desenho {
+			height: 500px;
+			margin-top: 30px;
+		}
+
+		#desenho>div {
+			float: left;
+			border: 1px solid #f3f3f3;
+		}
+
+		
+	</style>
+</head>
+
+<body>
+	<div id='barraCores'></div>
+	<div id='desenho'></div>
+</div>
+</body>
+
+</html>
