@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 960px;
+            margin: 40px auto;
+            border: 1px solid black;
+        }
+        input[type=text] {
+            background-color: antiquewhite;
+        }
+        input[type=email] {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid black;
+        }
+        input { 
+            margin: 0.5rem;
+        }
+        button { 
+            margin: 20px 4px 20px 4px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+    <form action="" method="post" id="form">
+        Email: <input type="email" name="emailUsuario" id="">
+        <br>
+        Text: <input type="text" maxlength="2">
+        <br>
+        Number: <input type="number">
+        <br>
+        Gender:
+        <input type="radio" value="binarie" name="gender">binarie
+        <input type="radio" value="nobinarie" name="gender">nobinarie
+        <br>
+        <input type="checkbox" value="corsa" name="vehicle">
+        <label for="corsa">I have a corsa</label>
+        <br>
+        <input type="checkbox" value="Banco1" name="vehicle">
+        <label for="Banco1">I have Banco 1 classes</label>
+        <br>
+        <input type="checkbox" value="Prog1" name="vehicle">
+        <label for="Prog1">I have Prog 1 classes</label>
+        <br>
+        <button type="submit" id="form">disabeled</button>
+
+    </form>
+
+</div>
+ 
+</body>
+
+</html>
