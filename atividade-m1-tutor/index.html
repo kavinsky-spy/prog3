@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deno</title>
+</head>
+
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        line-height: 1;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 33%;
+        text-align: center;
+    }
+
+    .wrapper {
+        text-align: left;
+    }
+
+    img {
+        height: 300px;
+        width: 300px;
+        fill: aqua;
+    }
+
+    img:hover {
+        filter: invert(48%) sepia(79%) saturate(390%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    }
+
+    header {
+        padding: 10px;
+        border: 0;
+        width: 100%;
+        height: 45px;
+
+        background-color: #222;
+    }
+
+    header ul {
+        display: flex;
+
+    }
+
+    header li {
+        padding: 0 20px;
+        list-style: none;
+        color: aliceblue;
+        font-family: sans-serif;
+    }
+    
+    header li a {
+        color: aliceblue;
+        text-decoration: unset;
+    }
+    
+</style>
+
+<body>
+
+    <header>
+        <ul>
+            <li><a href="/#" target="_blank" >Menu Link 1</a></li>
+            <li><a href="/#" target="_blank" >Menu Link 2</a></li>
+            <li><a href="/#" target="_blank" >Menu Link 3</a></li>
+            <li><a href="/#" target="_blank" >Menu Link 4</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <img src="https://deno.land/logo.svg" alt="deno-logo" class="filter-green">
+        <div class="wrapper">
+            <p>Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in
+                Rust.</p>
+
+            <ul>
+                <li> Secure by default. No file, network, or environment access, unless explicitly enabled.</li>
+                <li> Supports TypeScript out of the box.</li>
+                <li>Ships only a single executable file.</li>
+                <li> Has built-in utilities like a dependency inspector (deno info) and a code formatter (deno fmt).
+                </li>
+                <li> Has a set of reviewed (audited) standard modules that are guaranteed to work with Deno:
+                    deno.land/std</li>
+            </ul>
+        </div>
+    </div>
+    <footer>powered by: <a href="https://deno.land/">Deno</a></footer>
+</body>
+
+</html>
